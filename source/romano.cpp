@@ -7,8 +7,8 @@
 using namespace std;   // NOLINT
 
 
-    std::map<string, int> romanos = { {"I", 1}, {"V", 5, }, {"X", 10, }, {"L", 50, }, {"C", 100, }, {"D", 500, },
-    {"M", 1000, }};
+std::map<string, int> romanos = { {"I", 1}, {"V", 5, }, {"X", 10, }, {"L", 50, }, {"C", 100, }, {"D", 500, },
+{"M", 1000, }};
 // teste para verificar se os caracteres sao validos
 int teste1(string x) {
     string aux;
@@ -20,6 +20,7 @@ int teste1(string x) {
     }
     return 1;
 }
+// Teste para verificar repetições proibidas.
 int teste2(string x) {
     int repeat = 1;
     string aux;
@@ -39,7 +40,7 @@ int teste2(string x) {
     }
     return 1;
 }
-
+// O caractere I é utilizado somente antes do I, V e X.
 int teste3(string x) {
     string aux;
     int valor = 0;
