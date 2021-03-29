@@ -97,22 +97,28 @@ int teste5(string x) {
 }
 // converte numero romano para numero arabico
 int conversor(string x) {
-    if (teste1(x) == -1 || teste2(x) == -1 || teste3(x) == -1 ||teste4(x) == -1 || teste5(x) == -1) {
-        return -1;
-    }
     if (x.length() > 30) {
         return -1;
     }
+    if (teste1(x) == -1 || teste2(x) == -1 || teste3(x) == -1 ||teste4(x) == -1 || teste5(x) == -1) {
+        return -1;
+    }
     string aux;
+    bool DEC = 0;
     int resposta = 0, aux2 = 0;
     for (int i = x.length()-1; i>= 0; i--) {
         aux = x[i];
-        if (teste1(aux) == -1) {
-            return -1;
+        if (DEC) {
+            if (!(teste1(aux) > aux2)) {
+                return -1;
+            } else {
+                DEC = 0;
+            }
         }
         if (teste1(aux) >= aux2) {
             resposta += teste1(aux);
         } else {
+            DEC = 1;
             resposta -= teste1(aux);
         }
         aux2 = teste1(aux);

@@ -71,4 +71,7 @@ TEST_CASE("Converter a sequencia de caracteres romanos em inteiros.", "[romano][
     REQUIRE(conversor("CCC") == 300);
     REQUIRE(conversor("MMDCCLXXVII") == 2777);
     REQUIRE(conversor("MMDDDDCCLXXVII") == -1);
+    REQUIRE(conversor("IIX") == -1);
+    REQUIRE(conversor("IXC") == -1);
+    REQUIRE(conversor("IXL") == -1);
 }
