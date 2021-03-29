@@ -4,16 +4,6 @@
 /* Copyright 2-121 */
 using namespace std;   // NOLINT
 
-TEST_CASE("Teste: caractere I somente antes do I, V e X", "[romano][inteiro]") {
-    REQUIRE(teste3("IX") == 1);
-    REQUIRE(teste3("IV") == 1);
-    REQUIRE(teste3("II") == 1);
-    REQUIRE(teste3("IC") == -1);
-    REQUIRE(teste3("IM") == -1);
-    REQUIRE(teste3("IL") == -1);
-    REQUIRE(teste3("ID") == -1);
-    REQUIRE(teste3("L") == 1);
-}
 TEST_CASE("Teste: caracteres Validos", "[romano][inteiro]") {
     REQUIRE(teste1("I") == 1);
     REQUIRE(teste1("V") == 5);
@@ -45,6 +35,16 @@ TEST_CASE("Teste: Caracteres com repetições proibidas", "[romano][inteiro]") {
     REQUIRE(teste2("MMMM") == -1);
     REQUIRE(teste2("CCC") == 1);
     REQUIRE(teste2("MMCCLXI") == 1);
+}
+TEST_CASE("Teste: caractere I somente antes do I, V e X", "[romano][inteiro]") {
+    REQUIRE(teste3("IX") == 1);
+    REQUIRE(teste3("IV") == 1);
+    REQUIRE(teste3("II") == 1);
+    REQUIRE(teste3("IC") == -1);
+    REQUIRE(teste3("IM") == -1);
+    REQUIRE(teste3("IL") == -1);
+    REQUIRE(teste3("ID") == -1);
+    REQUIRE(teste3("L") == 1);
 }
 TEST_CASE("Teste: O caractere X é utilizado somente antes do I, V, X, L e C.", "[romano][inteiro]") {
     REQUIRE(teste4("XI") == 1);

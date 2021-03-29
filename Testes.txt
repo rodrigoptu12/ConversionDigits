@@ -1,0 +1,7 @@
+Teste 1 : teste para verificar se os caracteres sao validos/romanos.
+Teste 2 : Teste para verificar repetições proibidas. Ex: Os caracteres I, X, C e M podem repetir até 3 vezes seguidas. 
+Teste 3 : O caractere I é utilizado somente antes do I, V e X.
+Teste 4 : O caractere X é utilizado somente antes do I, V, X, L e C.
+Teste 5 : O caractere V nunca é escrito a esquerda do X,L,D. O caractere V nunca é escrito ao lado dele mesmo.
+
+conversor : função que converte o numero romano para arábico se os testes terem sucesso.

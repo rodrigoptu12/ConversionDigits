@@ -71,7 +71,7 @@ int teste4(string x) {
         return 1;
     }
 }
-// O caractere V nunca é escrito a esquerda do X. O caractere V nunca é escrito ao lado dele mesmo.
+// O caractere V nunca é escrito a esquerda do X,L,D. O caractere V nunca é escrito ao lado dele mesmo.
 int teste5(string x) {
     string aux;
     int valor = 0;
@@ -85,14 +85,14 @@ int teste5(string x) {
     }
     if (aux == "V") {
         return -1;
+    }
+    if (aux == "L") {
+        return -1;
+    }
+    if (aux == "D") {
+        return -1;
     } else {
         return 1;
-    }
-}
-// teste de caracteres máximo;
-int teste6(string x) {
-    if (x.length() > 30) {
-        return -1;
     }
 }
 // converte numero romano para numero arabico

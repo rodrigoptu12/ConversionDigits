@@ -20,5 +20,9 @@ clean:
 
 run: $(EXECUTABLE)
 	./$<
+cpp:
+	cppcheck --enable=warning .
+valgrind:
+	valgrind --leak-check=full $(EXECUTABLE)
 
 .PHONY: run clean all
