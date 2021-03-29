@@ -7,7 +7,7 @@
 using namespace std;   // NOLINT
 
 /* Funcao principal */
-
+int conversor(string x);
 /* Funcoes auxiliares */
 int teste5(string x);
 int teste4(string x);
