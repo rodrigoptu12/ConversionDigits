@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include "../lib/catch.hpp"
-#include "../lib/romano.hpp"
+#include "../include/romano.hpp"
 /* Copyright 2021 */
 using namespace std;   // NOLINT
 

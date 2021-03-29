@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include "../lib/catch.hpp"
-#include "../lib/romano.hpp"
+#include "../include/romano.hpp"
 /* Copyright 2-121 */
 using namespace std;   // NOLINT
 
