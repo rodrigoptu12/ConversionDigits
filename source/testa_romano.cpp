@@ -4,7 +4,7 @@
 /* Copyright 2-121 */
 using namespace std;   // NOLINT
 
-/*TEST_CASE("Teste: caractere I somente antes do I, V e X", "[romano][inteiro]") {
+TEST_CASE("Teste: caractere I somente antes do I, V e X", "[romano][inteiro]") {
     REQUIRE(teste3("IX") == 1);
     REQUIRE(teste3("IV") == 1);
     REQUIRE(teste3("II") == 1);
@@ -26,7 +26,7 @@ TEST_CASE("Teste: caracteres Validos", "[romano][inteiro]") {
     REQUIRE(teste1("Q") == -1);
     REQUIRE(teste1("GG") == -1);
     REQUIRE(teste1("KKK") == -1);
-}*/
+}
 TEST_CASE("Teste: Caracteres com repetições proibidas", "[romano][inteiro]") {
     REQUIRE(teste2("I") == 1);
     REQUIRE(teste2("V") == 1);
@@ -45,7 +45,7 @@ TEST_CASE("Teste: Caracteres com repetições proibidas", "[romano][inteiro]") {
     REQUIRE(teste2("CCC") == 1);
     REQUIRE(teste2("MMCCLXI") == 1);
 }
-/*TEST_CASE("Teste: O caractere X é utilizado somente antes do I, V, X, L e C.", "[romano][inteiro]") {
+TEST_CASE("Teste: O caractere X é utilizado somente antes do I, V, X, L e C.", "[romano][inteiro]") {
     REQUIRE(teste4("XI") == 1);
     REQUIRE(teste4("XV") == 1);
     REQUIRE(teste4("XL") == 1);
@@ -53,14 +53,14 @@ TEST_CASE("Teste: Caracteres com repetições proibidas", "[romano][inteiro]") {
     REQUIRE(teste4("XX") == 1);
     REQUIRE(teste4("XM") == -1);
     REQUIRE(teste4("XD") == -1);
-}*/
+}
 TEST_CASE("O caractere V nunca é escrito a esquerda do X e V nunca é escrito ao lado dele mesmo", "[romano][inteiro]") {
     REQUIRE(teste5("XV") == 1);
     REQUIRE(teste5("VX") == -1);
     REQUIRE(teste5("XVX") == -1);
     REQUIRE(teste5("VV") == -1);
 }
-/*TEST_CASE("Converter a sequencia de caracteres romanos em inteiros.", "[romano][inteiro]") {
+TEST_CASE("Converter a sequencia de caracteres romanos em inteiros.", "[romano][inteiro]") {
     REQUIRE(conversor("XV") == 15);
     REQUIRE(conversor("L") == 50);
     REQUIRE(conversor("XIV") == 14);
@@ -69,4 +69,3 @@ TEST_CASE("O caractere V nunca é escrito a esquerda do X e V nunca é escrito a
     REQUIRE(conversor("MMDCCLXXVII") == 2777);
     REQUIRE(conversor("MMDDDDCCLXXVII") == -1);
 }
-*/

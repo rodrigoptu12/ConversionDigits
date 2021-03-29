@@ -79,15 +79,21 @@ int teste5(string x) {
     } else {
         return 1;
     }
-
+}
+// teste de caracteres máximo;
+int teste6(string x) {
+    if (x.length() > 30) {
+        return -1;
+    }
 }
 
-/*int conversor(string x) {
-    teste1(x);
-    teste2(x);
-    teste3(x);
-    teste4(x);
-    teste5(x);
+int conversor(string x) {
+    if (teste1(x) == -1 || teste2(x) == -1 || teste3(x) == -1 ||teste4(x) == -1 || teste5(x) == -1) {
+        return -1;
+    }
+    if (x.length() > 30) {
+        return -1;
+    }
     string aux;
     int resposta = 0, aux2 = 0;
     for (int i = x.length()-1; i>= 0; i--) {
@@ -102,6 +108,8 @@ int teste5(string x) {
         }
         aux2 = teste1(aux);
     }
+    if (resposta > 3000) {
+        return -1;
+    }
     return resposta;
 }
-*/
