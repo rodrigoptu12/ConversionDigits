@@ -29,7 +29,7 @@ int teste2(string x) {
         aux = x[i];
         if (x[i] == x[i+1]) {
             repeat+=1;
-            if (aux == "L" || aux == "V"|| aux == "D" & repeat >1) {
+            if (aux == "L" || aux == "V"|| aux == "D" && repeat >1) {
                 return -1;
             }
             if (repeat > 3) {
@@ -46,6 +46,9 @@ int teste3(string x) {
     string aux;
     int valor = 0;
     valor = x.find("I");
+    if (valor > x.length()) {
+        return 1;
+    }
     aux = x[valor+1];
     if (aux == "I" || aux == "V" || aux == "X") {
         return 1;
@@ -58,6 +61,9 @@ int teste4(string x) {
     string aux;
     int valor = 0;
     valor = x.find("X");
+    if (valor > x.length()) {
+        return 1;
+    }
     aux = x[valor+1];
     if (aux == "D" || aux == "M") {
         return -1;
@@ -71,6 +77,9 @@ int teste5(string x) {
     int valor = 0;
     valor = x.find("V");
     aux = x[valor+1];
+    if (valor > x.length()) {
+        return 1;
+    }
     if (aux == "X") {
         return -1;
     }
@@ -86,7 +95,7 @@ int teste6(string x) {
         return -1;
     }
 }
-
+// converte numero romano para numero arabico
 int conversor(string x) {
     if (teste1(x) == -1 || teste2(x) == -1 || teste3(x) == -1 ||teste4(x) == -1 || teste5(x) == -1) {
         return -1;

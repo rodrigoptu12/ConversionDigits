@@ -12,6 +12,7 @@ TEST_CASE("Teste: caractere I somente antes do I, V e X", "[romano][inteiro]") {
     REQUIRE(teste3("IM") == -1);
     REQUIRE(teste3("IL") == -1);
     REQUIRE(teste3("ID") == -1);
+    REQUIRE(teste3("L") == 1);
 }
 TEST_CASE("Teste: caracteres Validos", "[romano][inteiro]") {
     REQUIRE(teste1("I") == 1);
@@ -53,12 +54,14 @@ TEST_CASE("Teste: O caractere X é utilizado somente antes do I, V, X, L e C.", 
     REQUIRE(teste4("XX") == 1);
     REQUIRE(teste4("XM") == -1);
     REQUIRE(teste4("XD") == -1);
+    REQUIRE(teste4("L") == 1);
 }
 TEST_CASE("O caractere V nunca é escrito a esquerda do X e V nunca é escrito ao lado dele mesmo", "[romano][inteiro]") {
     REQUIRE(teste5("XV") == 1);
     REQUIRE(teste5("VX") == -1);
     REQUIRE(teste5("XVX") == -1);
     REQUIRE(teste5("VV") == -1);
+    REQUIRE(teste5("L") == 1);
 }
 TEST_CASE("Converter a sequencia de caracteres romanos em inteiros.", "[romano][inteiro]") {
     REQUIRE(conversor("XV") == 15);
