@@ -72,25 +72,27 @@ int teste4(string x) {
     }
 }
 // O caractere V nunca é escrito a esquerda do X,L,D. O caractere V nunca é escrito ao lado dele mesmo.
+// Os simbolos V, L e D ,M nunca podem ser subtraidos. VL  LV.
 int teste5(string x) {
     string aux;
     int valor = 0;
     valor = x.find("V");
+    if (valor < x.length()) {
     aux = x[valor+1];
-    if (valor > x.length()) {
-        return 1;
-    }
-    if (aux == "X") {
+    if (aux == "X" || aux == "V" || aux == "L" || aux == "D")
         return -1;
     }
-    if (aux == "V") {
+    valor = x.find("L");
+    if (valor < x.length()) {
+    aux = x[valor+1];
+    if (aux == "C" || aux == "D" || aux == "M")
         return -1;
     }
-    if (aux == "L") {
-        return -1;
-    }
-    if (aux == "D") {
-        return -1;
+    valor = x.find("D");
+    if (valor < x.length()) {
+    aux = x[valor+1];
+    if (aux == "M")
+            return -1;
     } else {
         return 1;
     }
@@ -104,27 +106,27 @@ int conversor(string x) {
         return -1;
     }
     string aux;
-    bool DEC = 0;
-    int resposta = 0, aux2 = 0;
+    bool Verificador = 0;
+    int arabico = 0, aux2 = 0;
     for (int i = x.length()-1; i>= 0; i--) {
         aux = x[i];
-        if (DEC) {
+        if (Verificador) {
             if (!(teste1(aux) > aux2)) {
                 return -1;
             } else {
-                DEC = 0;
+                Verificador = 0;
             }
         }
         if (teste1(aux) >= aux2) {
-            resposta += teste1(aux);
+            arabico += teste1(aux);
         } else {
-            DEC = 1;
-            resposta -= teste1(aux);
+            Verificador = 1;
+            arabico -= teste1(aux);
         }
         aux2 = teste1(aux);
     }
-    if (resposta > 3000) {
+    if (arabico > 3000) {
         return -1;
     }
-    return resposta;
+    return arabico;
 }

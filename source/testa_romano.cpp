@@ -74,4 +74,7 @@ TEST_CASE("Converter a sequencia de caracteres romanos em inteiros.", "[romano][
     REQUIRE(conversor("IIX") == -1);
     REQUIRE(conversor("IXC") == -1);
     REQUIRE(conversor("IXL") == -1);
+    REQUIRE(conversor("VX") == -1);
+    REQUIRE(conversor("XM") == -1);
+    REQUIRE(conversor("LD") == -1);
 }
