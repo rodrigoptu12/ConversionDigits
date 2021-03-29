@@ -2,7 +2,6 @@
 #include <map>
 #include "../lib/catch.hpp"
 #include "../lib/romano.hpp"
-
 /* Copyright 2021 */
 using namespace std;   // NOLINT
 
@@ -15,7 +14,7 @@ int teste1(string x) {
     for (int i = 0; i< x.length(); i++) {
         aux = x[i];
         if (romanos.find(aux) == romanos.end()) {
-            return 0;
+            return -1;
         }
     }
     return 1;
@@ -29,10 +28,10 @@ int teste2(string x) {
         if (x[i] == x[i+1]) {
             repeat+=1;
             if (aux == "L" || aux == "V"|| aux == "D" & repeat >1) {
-                return 0;
+                return -1;
             }
             if (repeat > 3) {
-                return 0;
+                return -1;
             }
         } else {
         repeat = 1;
@@ -49,40 +48,32 @@ int teste3(string x) {
     if (aux == "I" || aux == "V" || aux == "X") {
         return 1;
     } else {
-        return 0;
+        return -1;
+    }
+}
+// O caractere X é utilizado somente antes do I, V, X, L e C.
+int teste4(string x) {
+    string aux;
+    int valor = 0;
+    valor = x.find("X");
+    aux = x[valor+1];
+    if (aux == "D" || aux == "M") {
+        return -1;
+    } else {
+        return 1;
+    }
+}
+// O caractere V nunca é escrito a esquerda do X.
+int teste5(string x) {
+    string aux;
+    int valor = 0;
+    valor = x.find("V");
+    aux = x[valor+1];
+    if (aux == "X") {
+        return -1;
+    } else {
+        return 1;
     }
 }
 
-/*int main() {
-    string x;
-    int teste;
-    cout << "Digite o Numero Romano a ser convertido : " << endl;
-    cin >> x;
-    teste1(x);
-    teste2(x);
-    teste = teste3(x);
-    cout << teste << endl;
-    // teste 1
-    /*for (int i = 0; i< x.length(); i++) {
-        aux = x[i];
-        if (romanos.find(aux) == romanos.end()) cout << " Valor invalido !" << endl;
-    }*/
-    /*for (int i = 0; i< x.length(); i++) {
-        if (x[i] == x[i+1]) {
-            repeat+=1;
-            if (repeat > 3) {
-                cout << " Valor invalido !" << endl;
-                return 0;
-            }
-        } else {
-        repeat = 1;
-        }
-    }*/
-        /*if (romanos.find(x)!= romanos.end()) cout << romanos[x] << endl;
-        else
-        cout << " Valor invalido !" << endl;*/
-    // cout << "\nVocê digitou o número: " << romanos.second << endl;
-    // cppcheck-suppress syntaxError
-  //  return 0;*/
-// }
 
