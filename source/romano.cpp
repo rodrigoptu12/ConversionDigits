@@ -6,8 +6,8 @@
 using namespace std;   // NOLINT
 
 
-std::map<string, int> romanos = { {"I", 1}, {"V", 5, }, {"X", 10, }, {"L", 50, }, {"C", 100, }, {"D", 500, },
-{"M", 1000, }};
+std::map<string, int> romanos = { {"I", 1}, {"V", 5, }, {"X", 10, },
+{"L", 50, }, {"C", 100, }, {"D", 500, }, {"M", 1000, }};
 // teste para verificar se os caracteres sao validos
 int teste1(string x) {
     string aux;
@@ -71,7 +71,8 @@ int teste4(string x) {
         return 1;
     }
 }
-// O caractere V nunca é escrito a esquerda do X,L,D. O caractere V nunca é escrito ao lado dele mesmo.
+// O caractere V nunca é escrito a esquerda do X,L,D.
+// O caractere V nunca é escrito ao lado dele mesmo.
 // Os simbolos V, L e D ,M nunca podem ser subtraidos. VL  LV.
 int teste5(string x) {
     string aux;
@@ -96,13 +97,15 @@ int teste5(string x) {
     } else {
         return 1;
     }
+    return 1;
 }
 // converte numero romano para numero arabico
 int conversor(string x) {
     if (x.length() > 30) {
         return -1;
     }
-    if (teste1(x) == -1 || teste2(x) == -1 || teste3(x) == -1 ||teste4(x) == -1 || teste5(x) == -1) {
+    if (teste1(x) == -1 || teste2(x) == -1 ||
+    teste3(x) == -1 ||teste4(x) == -1 || teste5(x) == -1) {
         return -1;
     }
     string aux;
